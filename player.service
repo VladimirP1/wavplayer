@@ -1,0 +1,9 @@
+[Unit]
+Description=Wav player
+
+[Service]
+Type=simple
+Exec=/usr/local/share/player/start.sh
+
+[Install]
+WantedBy=multi-user.target 
