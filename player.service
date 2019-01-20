@@ -1,5 +1,6 @@
 [Unit]
 Description=Wav player
+After=mnt-USB.mount
 
 [Service]
 Type=simple
