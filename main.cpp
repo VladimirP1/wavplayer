@@ -25,8 +25,8 @@ public:
         log << "Opening files ..." << std::endl;
         // These are fatal. Ignore exceptions
         std::cout << prefix << std::endl;
-        errorNoFile.loadFile((prefix + std::string("/../share/player/error_no_file.wav")).c_str());
-        errorBadFile.loadFile((prefix + std::string("/../share/player/error_bad_file.wav")).c_str());
+        errorNoFile.loadFile((prefix + std::string("/share/player/error_no_file.wav")).c_str());
+        errorBadFile.loadFile((prefix + std::string("/share/player/error_bad_file.wav")).c_str());
         setupForReader(errorNoFile);
         setupForReader(errorBadFile);
 
@@ -150,10 +150,7 @@ void sigterm(int sig) {
 }
 
 int main(int argc, char** argv) {
-    char* base = strdup(argv[0]);
-    base = dirname(base);
-
-    std::string prefix(base);
+    std::string prefix(INSTALL_PREFIX);
 
     if (argc != 3) {
         std::cout << "Usage: player FILENAME LOG_FILENAME" << std::endl;
@@ -161,9 +158,9 @@ int main(int argc, char** argv) {
     }
 
     struct sigaction action;
-	memset(&action, 0, sizeof(struct sigaction));
-	action.sa_handler = sigterm;
-	sigaction(SIGTERM, &action, NULL);
+    memset(&action, 0, sizeof(struct sigaction));
+    action.sa_handler = sigterm;
+    sigaction(SIGTERM, &action, NULL);
 
     std::ofstream log(argv[2], std::ios_base::out | std::ios_base::app);
 
