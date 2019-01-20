@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 15
+
 if [ -e /mnt/USB/inhibit.txt ]; then
     exit 1
 fi
