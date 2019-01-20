@@ -74,8 +74,8 @@ void WavReader::loadFile(const char *filename, Watchdog* wdt) {
 
         samples.resize(reader->header.data_bytes);
 
-        for (size_t pos = 0; (!reader->eof) && (pos + readerBlockSize) < samples.size(); ) {
-            pos += readFile(&samples[pos], readerBlockSize);
+        for (size_t pos = 0; (!reader->eof) && pos < samples.size(); ) {
+            pos += readFile(&samples[pos], std::min(readerBlockSize, samples.size() - pos));
             if (wdt) {
                 wdt->kick();
             }
