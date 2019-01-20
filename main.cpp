@@ -22,6 +22,7 @@ public:
 #endif
     log(log)
      {
+        wdt.setTimeout(1);
         log << "Opening files ..." << std::endl;
         // These are fatal. Ignore exceptions
         std::cout << prefix << std::endl;
