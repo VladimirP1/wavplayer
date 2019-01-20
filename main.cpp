@@ -25,7 +25,7 @@ public:
         wdt.setTimeout(1);
         log << "Opening files ..." << std::endl;
         // These are fatal. Ignore exceptions
-        std::cout << prefix << std::endl;
+
         errorNoFile.loadFile((prefix + std::string("/share/player/error_no_file.wav")).c_str());
         errorBadFile.loadFile((prefix + std::string("/share/player/error_bad_file.wav")).c_str());
         setupForReader(errorNoFile);
