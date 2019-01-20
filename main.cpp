@@ -165,7 +165,8 @@ int main(int argc, char** argv) {
 	action.sa_handler = sigterm;
 	sigaction(SIGTERM, &action, NULL);
 
-    std::ofstream log(argv[2]);
+    std::ofstream log(argv[2], std::ios_base::out | std::ios_base::app);
+
     try {
         Player p(argv[1], prefix, log);
         p.run();
