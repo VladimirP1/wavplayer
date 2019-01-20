@@ -9,7 +9,7 @@ wavreader = static_library('wavreader', ['wavreader.c', 'wavreaderpp.cpp', 'alsa
 
 install_data('start.sh', install_mode: 'rwxr-xr-x', install_dir: 'share/player')
 install_data('player.service', install_dir: '/etc/systemd/system', install_mode: 'rw-r--r--')
-install_data(['music.wav', 'sine.wav', 'error_no_file.wav', 'error_bad_file.wav'], install_dir: 'share/player')
+install_data(['music.wav', 'sine.wav', 'error_no_file.wav', 'error_bad_file.wav', 'README.txt', 'screenshot.png'], install_dir: 'share/player')
 
 
 alsa = dependency('alsa')
