@@ -3,7 +3,7 @@ Description=Wav player
 
 [Service]
 Type=simple
-Exec=/usr/local/share/player/start.sh
+ExecStart=/usr/local/share/player/start.sh
 
 [Install]
 WantedBy=multi-user.target 

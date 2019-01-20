@@ -10,7 +10,7 @@
 #include <memory>
 #include <vector>
 
-//#define USE_WDT
+#define USE_WDT
 
 volatile bool stop = false;
 
