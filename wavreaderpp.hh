@@ -25,7 +25,7 @@ public:
     void rewind();
 
 private:
-    const int readerBlockSize = 1024 * 1024;
+    const size_t readerBlockSize = 1024 * 1024;
 
     wav_reader* reader = nullptr;
     std::vector<uint8_t> samples;
