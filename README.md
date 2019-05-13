@@ -1,8 +1,8 @@
 Player 1.0
 ---------------------------
 
-This program was created for a project which reqired uninterrupted cyclical playback of 
-simple WAV files form a USB drive. There was a requerement for maximum fault-tolarancy, hence 
+This program was created for a project which demanded uninterrupted cyclical playback of 
+simple WAV files form a USB drive. There was a requirement for maximum fault-tolerancy, hence 
 the standard linux watchdog is used to cope with any hangs or lockups, which may occur in an 
 embedded linux system.
 
