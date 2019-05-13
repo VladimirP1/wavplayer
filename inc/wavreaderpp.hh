@@ -1,9 +1,9 @@
 #pragma once
 
 #include <wavreaderexception.hpp>
-#include "wdt.hh"
+#include <wdt.hh>
 extern "C" {
-    #include "wavreader.h"
+    #include <wavreader.h>
 }
 #include <vector>
 

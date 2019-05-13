@@ -1,5 +1,5 @@
 #pragma once
-#include "watchdogexception.hpp"
+#include <watchdogexception.hpp>
 
 class Watchdog {
 public:

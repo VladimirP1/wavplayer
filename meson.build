@@ -5,13 +5,15 @@ project('player', ['cpp', 'c'],        version: '0.1.0',
 prefix = get_option('prefix')
 add_project_arguments('-DINSTALL_PREFIX="' + prefix + '"', language : 'cpp')
 
-wavreader = static_library('wavreader', ['wavreader.c', 'wavreaderpp.cpp', 'alsa.cpp', 'wdt.cpp'])
+incdir = include_directories('inc')
 
-install_data('start.sh', install_mode: 'rwxr-xr-x', install_dir: 'share/player')
-install_data('player.service', install_dir: '/etc/systemd/system', install_mode: 'rw-r--r--')
-install_data(['music.wav', 'sine.wav', 'error_no_file.wav', 'error_bad_file.wav', 'README.txt', 'screenshot.png'], install_dir: 'share/player')
+wavreader = static_library('wavreader', ['src/wavreader.c', 'src/wavreaderpp.cpp', 'src/alsa.cpp', 'src/wdt.cpp'], include_directories : incdir)
+
+install_data('res/start.sh', install_mode: 'rwxr-xr-x', install_dir: 'share/player')
+install_data('res/player.service', install_dir: '/etc/systemd/system', install_mode: 'rw-r--r--')
+install_data(['res/music.wav', 'res/sine.wav', 'res/error_no_file.wav', 'res/error_bad_file.wav', 'res/README.txt', 'res/screenshot.png'], install_dir: 'share/player')
 
 
 alsa = dependency('alsa')
 
-executable('player', ['main.cpp'], link_with : [wavreader], dependencies: [alsa], install:true)
+executable('player', ['src/main.cpp'], link_with : [wavreader], dependencies: [alsa], include_directories: incdir, install:true)

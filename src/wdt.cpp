@@ -1,4 +1,4 @@
-#include "wdt.hh"
+#include <wdt.hh>
 
 #include <sys/types.h>
 #include <sys/ioctl.h>
@@ -7,10 +7,12 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <linux/watchdog.h>
+#include <iostream>
 
 Watchdog::Watchdog(char const* filename) {
     fd = open(filename, O_WRONLY);
     if (fd < 0) {
+        std::cout << "Could not open watchdog" << std::endl;
         throw WatchdogException("Could not open watchdog", errno);
     }
 }

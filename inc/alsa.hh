@@ -1,6 +1,6 @@
 #pragma once
 #include <alsa/asoundlib.h>
-#include "alsaexception.hpp"
+#include <alsaexception.hpp>
 
 class AlsaPCM {
 public:

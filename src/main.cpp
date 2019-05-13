@@ -16,10 +16,11 @@ volatile bool stop = false;
 
 class Player {
 public:
-    Player(std::string file, std::string prefix, std::ostream& log) : pcm("default"),
+    Player(std::string file, std::string prefix, std::ostream& log) : 
 #ifdef USE_WDT
-    wdt("/dev/watchdog"),
+           wdt("/dev/watchdog"),
 #endif
+           pcm("default"),
     log(log)
      {
         wdt.setTimeout(1);
@@ -74,10 +75,10 @@ public:
     }
 
 private:
-    AlsaPCM pcm;
 #ifdef USE_WDT
     Watchdog wdt;
 #endif
+    AlsaPCM pcm;
 
     WavReader music;
     WavReader errorNoFile;

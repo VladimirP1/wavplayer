@@ -1,5 +1,5 @@
-#include "wavreaderpp.hh"
-#include "wavreaderexception.hpp"
+#include <wavreaderpp.hh>
+#include <wavreaderexception.hpp>
 #include <exception>
 
 WavReader::WavReader() {

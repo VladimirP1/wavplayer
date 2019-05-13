@@ -1,6 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-#include "wavreader.h"
+#include <wavreader.h>
 
 bool wav_reader_alloc(wav_reader **reader) {
     (*reader) = (wav_reader*) malloc(sizeof(wav_reader));

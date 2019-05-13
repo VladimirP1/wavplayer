@@ -1,4 +1,4 @@
-#include "alsa.hh"
+#include <alsa.hh>
 
 AlsaPCM::AlsaPCM(char const* name) {
     int err;
